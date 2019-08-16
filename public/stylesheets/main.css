@@ -1,0 +1,202 @@
+body {
+    position: relative;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+hr {
+    border: 1px solid #d0d0d1;
+}
+
+#navbar {
+    z-index: 1000;
+    position: fixed;
+}
+
+nav .sidenav-trigger {
+    position: absolute;
+    right: 0;
+}
+
+#navbar a img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.divider {
+    display: inline-block;
+    width: 1px;
+    background-color: rgb(212, 208, 208);
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+#general-nav,
+#main-content {
+    min-height: 500px;
+    margin-top: 64px;
+    border-bottom: none;
+}
+
+#general-nav .collection {
+    margin-top: 25px;
+    border: none;
+}
+
+#general-nav .collection a {
+    align-items: center;
+}
+
+#main-content .card {
+    padding: 0px;
+}
+
+#main-content .card-content {
+    overflow: hidden;
+}
+
+#main-content .card-image {
+    box-shadow: 0px 1px 1px grey;
+}
+
+#main-content .card-image img {
+    border-radius: 1px 1px 0 0;
+}
+
+section.middle {
+    height: calc(100vh - 52px);
+}
+
+a.collection-item {
+    color: black !important;
+}
+
+aside a.collection-item:hover {
+    background-color: #93a9b4 !important;
+}
+
+aside a.collection-item:hover,
+aside a.collection-item:hover i {
+    color: white !important;
+}
+
+aside a.collection-item.active,
+aside a.collection-item.active i {
+    background-color: #607d8b !important;
+    color: white !important;
+}
+
+.footer-copyright {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.card-image img,
+.card .horizontal {
+    max-height: 135px !important;
+}
+
+.category-content img {
+    max-width: 65px;
+}
+
+.category-name {
+    text-transform: capitalize;
+}
+
+.item-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.item-card img {
+    min-width: 245px;
+    min-height: 380px;
+    max-height: 380px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px gray;
+}
+
+.card-stacked .card-content {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.card-stacked div.card-action {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.mobile-image {
+    max-width: 250px;
+    max-height: 300px;
+}
+
+i.yellow-text {
+    font-size: 18px;
+}
+
+i.left {
+    margin-right: 7px;
+}
+
+.input-field input[type='text']:focus + label,
+.input-field input[type='email']:focus + label,
+.materialize-textarea:focus + label,
+.input-field .prefix.active,
+.materialize-textarea .prefix.active {
+    color: #556e79 !important;
+}
+
+.input-field input[type='text']:focus,
+.input-field input[type='email']:focus,
+.materialize-textarea:focus {
+    border-bottom: 1px solid #556e79 !important;
+    box-shadow: 0 1px 0 0 #556e79 !important;
+}
+
+#main-content .item-page-content {
+    position: relative;
+    padding: 0 !important;
+}
+
+.back-link {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+}
+
+#rating {
+    width: 200px !important;
+}
+
+.dropdown-content li > a > i {
+    margin-right: 10px;
+    width: 10px;
+}
+
+.status {
+    padding: 6px 10px;
+    box-shadow: 1px 1px 2px rgb(211, 208, 208);
+    border-radius: 50px;
+}
+
+input.browser-default {
+    min-width: 38px;
+    max-width: 38px;
+}
+
+#signoutModal {
+    max-width: 400px !important;
+}
+
+.deleteItemModal {
+    max-width: 450px;
+}

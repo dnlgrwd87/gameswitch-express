@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include partials/head.ejs %>
+</head>
+
+<body class="grey lighten-5">
+
+    <header>
+        <% include partials/header.ejs %>
+    </header>
+
+    <section class="middle row mb-0">
+        <% include partials/site-navigation.ejs %>
+
+        <main id="main-content" class="col s12 l10">
+            <div class="mt-3 card">
+                <div class="card-content">
+                    <span class="card-title blue-grey-text">
+                        <span class="category-name"><%= category %> Games</span>
+                    </span>
+                    <hr class="mt-3 mb-3">
+                    <div class="row mb-0">
+                        <% games.forEach(game => { %>
+                            <div class="col s12 m6 l4">
+                                <div class="card horizontal">
+                                    <div class="card-image">
+                                        <img src="<%= game.imageURL %>" alt="<%= game.itemName %>">
+                                    </div>
+                                    <div class="card-stacked">
+                                        <div class="card-content">
+                                            <p><%= game.itemName %></p>
+                                            <small class="grey-text">- Posted by:
+                                                <%= `${game.postedBy.firstName} ${game.postedBy.lastName}` %></small>
+                                        </div>
+                                        <div class="card-action">
+                                            <a class="blue-grey-text" href="/item/<%= game._id %>">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <footer class="blue-grey darken-1 d-flex pl-2 pr-2 valign-wrapper">
+        <% include partials/footer.ejs %>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include partials/head.ejs %>
+</head>
+
+<body class="grey lighten-5">
+
+    <header>
+        <% include partials/header.ejs %>
+    </header>
+
+    <section class="middle row mb-0">
+        <% include partials/site-navigation.ejs %>
+
+        <main id="main-content" class="col s12 l10">
+            <div class="mt-3 card">
+                <div class="card-content">
+                    <span class="card-title blue-grey-text">Register</span>
+                    <hr class="mt-3 mb-1">
+                    <div class="row mb-0">
+                        <form class="col s12 m8 xl6" action="/registerUser" method="POST" id="register">
+                            <div class="row mr-0">
+                                <div class="input-field col s12 mb-0">
+                                    <input id="firstName" name="firstName" type="text" class="validate pl-1 pr-1"
+                                        required />
+                                    <label for="firstName">First Name</label>
+                                </div>
+                            </div>
+                            <div class="row mr-0">
+                                <div class="input-field col s12 mb-0">
+                                    <input id="lastName" name="lastName" type="text" class="validate pl-1 pr-1" required />
+                                    <label for="lastName">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row mr-0">
+                                <div class="input-field col s12 mb-0">
+                                    <input id="email" name="email" type="email" class="validate pl-1 pr-1" required />
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="row mr-0">
+                                <div class="input-field col s12 mb-0">
+                                    <input id="password" name="password" type="password" class="validate pl-1 pr-1"
+                                        required />
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row mr-0">
+                                <div class="input-field col s12 mb-0">
+                                    <input id="confirmPassword" name="confirmPassword" type="password"
+                                        class="validate pl-1 pr-1" required />
+                                    <label for="confirmPassword">Confirm Password</label>
+                                </div>
+                            </div>
+                            <button
+                                class="indigo lighten-2 white-text modal-close btn btn-small waves-effect waves-light">
+                                Register
+                            </button>
+                            <% if (error) { %>
+                                <p class="red-text mt-3">
+                                    <small><%= error %></small>
+                                </p>
+                            <% } %>
+                            <p class="mt-3">Already have an account? <a href="/login">Sign in now.</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <footer class="blue-grey darken-1 d-flex pl-2 pr-2 valign-wrapper">
+        <% include partials/footer.ejs %>
+    </footer>
+
+</body>
+
+</html>

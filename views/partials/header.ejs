@@ -1,0 +1,60 @@
+<nav id="navbar" class="container-fluid blue-grey darken-1 pl-2 pr-2 valign-wrapper">
+    <a href="/">
+        <img src="/images/logo.png" alt="" width="210" height="35" />
+    </a>
+    <ul class="hide-on-med-and-down ml-auto valign-wrapper">
+        <% if (user) { %>
+        <li class=" <%= page === 'myItems' ? 'active' : '' %>"><a href="/myItems">My Games</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#signoutModal" class="modal-trigger">Sign Out</a></li>
+        <% } else { %>
+        <li><a href="/login" class="modal-trigger">Sign In</a></li>
+        <% } %> <% if (user) { %>
+        <li class="divider"></li>
+        <li></li>
+        <li>Welcome, <%= user.firstName %></li>
+        <% } %>
+    </ul>
+    <a href="#" class="sidenav-trigger ml-auto" data-target="mobile-menu">
+        <i class="material-icons">menu</i>
+    </a>
+    <ul class="sidenav" id="mobile-menu">
+        <% if (user) { %>
+        <li class=" <%= page === 'myItems' ? 'active' : '' %>"><a href="/myItems">My Games</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#signoutModal" class="modal-trigger">Sign Out</a></li>
+        <% } else { %>
+        <li><a href="/login" class="modal-trigger">Sign In</a></li>
+        <% } %>
+        <li><hr class="mt-2 mb-2" /></li>
+        <li class=" <%= page === 'index' ? 'active' : '' %>"><a href="/">Home</a></li>
+        <li class=" <%= page === 'categories' ? 'active' : '' %>">
+            <a href="/categories">Categories</a>
+        </li>
+        <li><a href="#">Store</a></li>
+        <li class=" <%= page === 'about' ? 'active' : '' %>"><a href="/about">About</a></li>
+        <li class=" <%= page === 'contact' ? 'active' : '' %>">
+            <a href="/contact">Contact Us</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Signout modal -->
+<div id="signoutModal" class="modal">
+    <div class="modal-content">
+        <h6>Are you sure you want to sign out?</h6>
+    </div>
+    <hr class="mb-0" />
+    <div class="modal-footer pr-2">
+        <button
+            class="mr-2 red lighten-1 white-text modal-close btn btn-small waves-effect waves-light"
+        >
+            Close
+        </button>
+        <a
+            href="/logout"
+            class="indigo lighten-2 white-text modal-close btn btn-small waves-effect waves-light"
+            >Confirm</a
+        >
+    </div>
+</div>

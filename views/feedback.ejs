@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include partials/head.ejs %>
+</head>
+
+<body class="grey lighten-5">
+
+    <header>
+        <% include partials/header.ejs %>
+    </header>
+
+    <section class="middle row mb-0">
+        <% include partials/site-navigation.ejs %>
+
+        <main id="main-content" class="col s12 l10">
+            <div class="mt-3 card pl-2 pr-2 pt-2 pb-2">
+                <div class="card-content">
+                    <a href="/myItems" class="back-link valign-wrapper">
+                        <i class="material-icons mr-1">arrow_back</i>
+                        Back
+                    </a>
+                    <div class="hide-on-med-and-up">
+                        <div class="d-flex justify-content-center">
+                            <img src="<%= userItem.item.imageURL %>" class="mobile-image mb-2"
+                                alt="<%= userItem.item.itemName %>">
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="d-flex item-card">
+                        <img src="<%= userItem.item.imageURL %>" class="mr-3 hide-on-small-and-down"
+                            alt="<%= userItem.item.itemName %>">
+                        <div>
+                            <span class="card-title blue-grey-text"><%= userItem.item.itemName %></span>
+                            <p><%= userItem.item.description %></p>
+                            <hr class="mt-2 mb-2">
+                            <div>
+                                <b>Platform: </b><%= userItem.item.platform %><br>
+                                <b>Genre: </b><%= userItem.item.genres.join(', ') %>
+                                <br>
+                                <b>Retail Price: </b>$<%= userItem.item.retailPrice %><br>
+                                <span class="valign-wrapper">
+                                    <b class="mr-1">Your Rating: </b>
+                                    <% for (let i = 0; i < userItem.rating; i++) { %>
+                                        <i class="material-icons yellow-text text-darken-4">star</i>
+                                    <% } %>
+                                </span>
+                            </div>
+                            <hr class="mt-2 mb-2">
+                            <form action="/saveFeedback" class="mb-2" method="POST">
+                                <input type="hidden" name="itemList" value="<%= userItem._id %>">
+                                <input type="hidden" name="itemCode" value="<%= userItem._id %>">
+                                    <label class="d-block">
+                                        <% if (userItem.ownIt) { %>
+                                            <input name="ownIt" type="checkbox" checked />
+                                        <% } else { %>
+                                            <input name="ownIt" type="checkbox">
+                                        <% } %>
+                                        <span>Own it</span>
+                                    </label>
+                                    <span class="d-block mt-2 mb-3">
+                                        Rating:
+                                        <input name="rating" type="number" min="1" max="5" value="<%= userItem.rating %>" class="browser-default">
+                                    </span>
+                                    <button class="waves-effect waves-light btn btn-small indigo lighten-2">
+                                        Update
+                                    </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <footer class="blue-grey darken-1 d-flex pl-2 pr-2 align-items-center">
+        <% include partials/footer.ejs %>
+    </footer>
+
+</body>
+
+</html>
